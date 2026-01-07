@@ -13,7 +13,8 @@ private:
     string accountNo;
     int customerAge;
     double customerBalance;
-    DataHandle &d=DataHandle::GetInstance();
+    DataHandle &d = DataHandle::GetInstance();
+
 public:
     Customer()
     {
@@ -24,34 +25,57 @@ public:
     }
     Customer(string name, string fatherName, int age, double balance)
     {
-        this->customerFatherName = fatherName;
-        this->customerName = name;
-        this->customerAge = age;
-        if(d.checkEnterBalnce(balance))
+        this->customerFatherName = d.lowerCase(fatherName);
+        this->customerName = d.lowerCase(name);
+        this->customerAge = d.valiDateAge(age);
+        if (d.checkEnterBalnce(balance))
         {
             this->customerBalance = balance;
-            cout<<"You Accout is Created \n";
+            cout << "You Accout is Created \n";
         }
-        else{
-            cout<<"Your Account Is Temperary Created Please Enter Correct  Balance \n";
+        else
+        {
+            cout << "Your Account Is Temperary Created Please Enter Correct  Balance \n";
         }
-        
     }
     // === Data Correction Method \n;
     void setCorrecBalance()
     {
-        double balance=0;
-        cout<<"Enter Your Correct Balance \n";
+        double balance = 0;
+        cout << "Enter Your Correct Balance \n";
         cin >> balance;
         while (!d.checkEnterBalnce(balance))
         {
-            cout<<"Enter Your correct Balance \n";
-            cin>>balance;
+            cout << "Enter Your correct Balance \n";
+            cin >> balance;
         }
-        this->customerBalance=balance;
+        this->customerBalance = balance;
     }
-    
-
+    void setCustomerName(string name)
+    {
+        this->customerName = d.lowerCase(name);
+    }
+    string &getCustomerName()
+    {
+        return customerName;
+    }
+    void setCustomerFatherName(string fatherName)
+    {
+        this->customerFatherName = fatherName;
+    }
+    string &getCustomerFatherName()
+    {
+        return customerFatherName;
+    }
+    void setCustomerAge(int age)
+    {
+        if (d.valiDateAge(age))
+            this->customerAge = age;
+        else
+        {
+            cout << "Please Enter Correct Age \n";
+        }
+    }
 };
 
 #endif

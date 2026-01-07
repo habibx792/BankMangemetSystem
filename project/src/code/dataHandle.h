@@ -19,6 +19,10 @@ public:
         static DataHandle instance;
         return instance;
     }
+    bool valiDateAge(int age)
+    {
+        return (age>18&&age<=130);
+    }
     bool checkEnterBalnce(double balance)
     {
         return balance >= 0;
