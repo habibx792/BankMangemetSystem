@@ -45,6 +45,10 @@ public:
         }
         return ans;
     }
+    void throughError()
+    {
+        cout<<"Error! \n";
+    }
 };
 
 #endif
