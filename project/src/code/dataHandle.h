@@ -3,6 +3,7 @@
 #define DATAHANDLE_H
 #include <iostream>
 #include <string>
+#include<vector>
 using namespace std;
 class DataHandle
 {
@@ -44,6 +45,18 @@ public:
             }
         }
         return ans;
+    }
+    vector<int> calculateDays(int sYear,int sMonth,int sDay)
+    {
+
+    }
+    bool isLeap(int year)
+    {
+        if(year%4==0&&year%100!=0||(year%400==0))
+        {
+            return true;
+        }
+        return false;
     }
     void throughError()
     {
