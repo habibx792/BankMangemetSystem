@@ -20,6 +20,10 @@ public:
     virtual void withDraw(int amount, string accountNo)
     {
     }
+    int getBalance()
+    {
+
+    }
     virtual void deposite(int amount, string accountNo)
     {
     }
