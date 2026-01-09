@@ -17,7 +17,12 @@ public:
 
     // getters
     string getmemberName() const;
-
+    virtual void withDraw(int amount, string accountNo)
+    {
+    }
+    virtual void deposite(int amount, string accountNo)
+    {
+    }
     // setters
     void setmemberName(const string& value);
 };

@@ -6,13 +6,22 @@ using namespace std;
 class ATM : protected Bank
 {
 private:
-    // member variables
+   
     string memberName;
 
 public:
-    ATM();
-    string getmemberName() const;
-    void setmemberName(const string& value);
+    ATM()
+    {
+
+    }
+    void withDraw(int amount,string accountNo)
+    {
+
+    }
+    void deposite(int amount,string accountNo)
+    {
+        
+    }
 };
 
 #endif // ATM_H
