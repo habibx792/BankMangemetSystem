@@ -3,7 +3,7 @@
 #define DATAHANDLE_H
 #include <iostream>
 #include <string>
-#include<vector>
+#include <vector>
 using namespace std;
 class DataHandle
 {
@@ -22,7 +22,7 @@ public:
     }
     bool valiDateAge(int age)
     {
-        return (age>18&&age<=130);
+        return (age > 18 && age <= 130);
     }
     bool checkEnterBalnce(double balance)
     {
@@ -46,29 +46,41 @@ public:
         }
         return ans;
     }
-    vector<int> calculateDays(int sYear,int sMonth,int sDay)
+    vector<int> calculateDays(int sYear, int sMonth, int sDay)
     {
-
+        vector<int>ans;
+        return ans;
     }
     bool isLeap(int year)
     {
-        if(year%4==0&&year%100!=0||(year%400==0))
+        if (year % 4 == 0 && year % 100 != 0 || (year % 400 == 0))
         {
             return true;
         }
         return false;
     }
-    void captilize(strign std)
+    string captilize(string str)
     {
-        string ans="";
-
-
+        string ans = "";
+        int n = str.length();
+        for (int i = 0; i < n; i++)
+        {
+            if (str[i] >= 'a' && str[i] <= 'z')
+            {
+                char ch = 'A' + str[i] - 'a';
+                ans += ch;
+            }
+            else
+            {
+                ans += str[i];
+            }
+        }
 
         return ans;
     }
     void throughError()
     {
-        cout<<"Error! \n";
+        cout << "Error! \n";
     }
 };
 
