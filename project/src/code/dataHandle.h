@@ -58,6 +58,14 @@ public:
         }
         return false;
     }
+    void captilize(strign std)
+    {
+        string ans="";
+
+
+
+        return ans;
+    }
     void throughError()
     {
         cout<<"Error! \n";
