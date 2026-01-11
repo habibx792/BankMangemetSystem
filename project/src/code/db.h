@@ -21,7 +21,22 @@ private:
     DB &operator=(const DB &) = delete;
 
 public:
-    // constructors
+    bool excuteQuery(string query)
+    {
+
+    }
+    void loadDATA()
+    {
+
+    }
+    bool dbStatus()
+    {
+
+    }
+    void dbError()
+    {
+        
+    }
 };
 
 #endif // DB_H
