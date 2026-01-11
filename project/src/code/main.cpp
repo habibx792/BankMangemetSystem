@@ -12,7 +12,7 @@ void clearScrean()
 using namespace std;
 int main()
 {
-    clearScrean();
+    // clearScrean();
     Customer c("haib", "wali", 22, 1);
     cout << "hellp World \n";
     return 0;
