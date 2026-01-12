@@ -24,9 +24,14 @@ public:
         return amount;
     }
 };
-class homeLoan : public loan
+class HomeLoan : public Loan
 {
+};
+class CarLoan : public Loan
+{
+};
+class BusinessLoan : public Loan
+{
+};
 
-} class CarLoan : public loan
-
-#endif // Loan_H
+#endif 
