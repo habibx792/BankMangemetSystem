@@ -25,10 +25,6 @@ public:
     {
 
     }
-    void loadDATA()
-    {
-
-    }
     bool dbStatus()
     {
 

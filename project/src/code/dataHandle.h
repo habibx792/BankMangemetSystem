@@ -82,6 +82,28 @@ public:
     {
         cout << "Error! \n";
     }
+    int getInput(int min,int max)
+    {
+        int choice;
+        while(true)
+        {
+            cout<<"Enter a Choice  ( "<<min<<" between "<<max<<" ) "<<endl;
+            cin>>choice;
+            if(cin.fail()||choice<min||choice>max)
+            {
+                cin.clear();
+                cin.ignore();
+                cout<<"lease Enter A valid Information \n";
+            }
+            else 
+            {
+                cin.ignore();
+                return choice;
+                /* code */
+            }
+            
+        }
+    }
 };
 
 #endif
