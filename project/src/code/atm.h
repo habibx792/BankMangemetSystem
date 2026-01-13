@@ -31,6 +31,10 @@ public:
     {
         
     }
+    void sendMoney()
+    {
+        
+    }
 };
 
 #endif // ATM_H
