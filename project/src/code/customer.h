@@ -5,6 +5,12 @@
 #include <string>
 #include "dataHandle.h"
 using namespace std;
+class person
+{
+    string name;
+    string fatherName;
+    int aga;
+};
 class Customer
 {
 private:
@@ -75,6 +81,9 @@ public:
         {
             cout << "Please Enter Correct Age \n";
         }
+    }
+    void print()
+    {
     }
 };
 
