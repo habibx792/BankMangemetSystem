@@ -18,6 +18,15 @@ public:
     {
 
     }
+    string  checkBalance(string AccountNo)
+    {
+        string ans="";
+
+
+        return ans;
+
+
+    }
     void deposite(int amount,string accountNo)
     {
         
