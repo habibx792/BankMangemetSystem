@@ -8,42 +8,43 @@ using namespace std;
 DataHandle &d = DataHandle::GetInstance();
 class person
 {
+protected:
     string name;
     string fatherName;
     int age;
-    string  cnic;
+    string cnic;
 
 public:
     person()
     {
-        this->age=0;
-        this->name="";
-        this->fatherName="";
+        this->age = 0;
+        this->name = "";
+        this->fatherName = "";
     }
-    person(string name,string fatherName,int age)
+    person(string name, string fatherName, int age)
     {
-        this->age=age;
-        this->fatherName=fatherName;
-        this->name=name;
+        this->age = age;
+        this->fatherName = fatherName;
+        this->name = name;
     }
     void setName(string name)
     {
-        this->name=name;
+        this->name = name;
     }
     void setFatherName(string fatherName)
     {
-        this->fatherName=fatherName;
+        this->fatherName = fatherName;
     }
     void setAge(int age)
     {
-        if(d.valiDateAge(age))
+        if (d.valiDateAge(age))
         {
-            this->age=age;
+            this->age = age;
         }
-        else{
-            cout<<"Please Enter Correct Age \n";
+        else
+        {
+            cout << "Please Enter Correct Age \n";
         }
-
     }
     string getPersonName()
     {
@@ -53,7 +54,7 @@ public:
     {
         return this->fatherName;
     }
-    string getCnic()const
+    string getCnic() const
     {
         return this->cnic;
     }
@@ -62,7 +63,7 @@ public:
         return this->age;
     }
 };
-class Customer
+class Customer : public person
 {
 private:
     string customerName;
