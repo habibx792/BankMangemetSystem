@@ -5,11 +5,46 @@
 #include <string>
 #include "dataHandle.h"
 using namespace std;
+DataHandle &d = DataHandle::GetInstance();
 class person
 {
     string name;
     string fatherName;
-    int aga;
+    int age;
+    string  cnic;
+
+public:
+    person()
+    {
+        this->age=0;
+        this->name="";
+        this->fatherName="";
+    }
+    person(string name,string fatherName,int age)
+    {
+        this->age=age;
+        this->fatherName=fatherName;
+        this->name=name;
+    }
+    void setName(string name)
+    {
+        this->name=name;
+    }
+    void setFatherName(string fatherName)
+    {
+        this->fatherName=fatherName;
+    }
+    void setAge(int age)
+    {
+        if(d.valiDateAge(age))
+        {
+            this->age=age;
+        }
+        else{
+            cout<<"Please Enter Correct Age \n";
+        }
+
+    }
 };
 class Customer
 {
@@ -19,7 +54,6 @@ private:
     string accountNo;
     int customerAge;
     double customerBalance;
-    DataHandle &d = DataHandle::GetInstance();
 
 public:
     Customer()
