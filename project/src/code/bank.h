@@ -28,7 +28,26 @@ public:
     {
     }
     // setters
-    void setmemberName(const string& value);
+    void setmemberName(const string& value)
+    {
+
+    }
+    void createAccount()
+    {
+
+    }
+    void sendMoney()
+    {
+
+    }
+    void depositeMoney()
+    {
+        
+    }
+    void withDrawMoney()
+    {
+        
+    }
 };
 
 #endif // Bank_H
