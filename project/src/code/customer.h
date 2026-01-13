@@ -45,6 +45,22 @@ public:
         }
 
     }
+    string getPersonName()
+    {
+        return this->name;
+    }
+    string getFatherName()
+    {
+        return this->fatherName;
+    }
+    string getCnic()const
+    {
+        return this->cnic;
+    }
+    int getAge()
+    {
+        return this->age;
+    }
 };
 class Customer
 {
