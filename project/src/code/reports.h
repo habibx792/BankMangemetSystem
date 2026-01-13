@@ -27,13 +27,13 @@ public:
         this->reportType = type;
     }
 };
-class customerReort
+class customerReort : public Report
 {
 };
-class atmReport
+class atmReport : public Report
 {
 };
-class emplyeeRepory
+class emplyeeRepory : public Report
 {
 };
 #endif // Report_H
