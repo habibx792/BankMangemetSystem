@@ -11,10 +11,16 @@ void clearScrean()
 #endif
 }
 using namespace std;
+void playLogin()
+{
+    
+}
 int main()
 {
 
     // clearScrean();
+    //system start a login sound should play
+
     Customer c("haib", "wali", 22, 1);
     cout << "hellp World \n";
     return 0;
