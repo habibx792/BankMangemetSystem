@@ -7,7 +7,7 @@ using namespace std;
 
 class FeedBack {
 private:
-protected
+protected:
     // member variables
 public:
     // constructors

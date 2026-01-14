@@ -104,6 +104,32 @@ public:
             
         }
     }
+    void wordCaptilize(string word)
+    {
+        vector<string>ans;
+        int n=word.length();
+        string word="";
+        bool found=false;
+        for(int i=0;i<n;i++)
+        {
+            
+            if(word[i]!=' ')
+            {
+                char ch=word[i];
+                if(ch>='a'&&ch<='z'&&!found)
+                {
+                    ch='A'+ch-'a';
+                    found=true;
+                }
+                else{
+                    ch='a'+ch-'A';
+                    word+=ch;
+                }
+                continue;
+            }
+
+        }
+    }
 };
 
 #endif
