@@ -48,7 +48,7 @@ public:
     }
     vector<int> calculateDays(int sYear, int sMonth, int sDay)
     {
-        vector<int>ans;
+        vector<int> ans;
         return ans;
     }
     bool isLeap(int year)
@@ -82,52 +82,75 @@ public:
     {
         cout << "Error! \n";
     }
-    int getInput(int min,int max)
+    int getInput(int min, int max)
     {
         int choice;
-        while(true)
+        while (true)
         {
-            cout<<"Enter a Choice  ( "<<min<<" between "<<max<<" ) "<<endl;
-            cin>>choice;
-            if(cin.fail()||choice<min||choice>max)
+            cout << "Enter a Choice  ( " << min << " between " << max << " ) " << endl;
+            cin >> choice;
+            if (cin.fail() || choice < min || choice > max)
             {
                 cin.clear();
                 cin.ignore();
-                cout<<"lease Enter A valid Information \n";
+                cout << "lease Enter A valid Information \n";
             }
-            else 
+            else
             {
                 cin.ignore();
                 return choice;
                 /* code */
             }
-            
         }
+    }
+    char makeBig(char ch)
+    {
+        if (ch >= 'a' && ch <= 'z')
+        {
+            ch = 'A' + ch - 'a';
+        }
+        return ch;
+    }
+    char makeSmall(char ch)
+    {
+        if (ch >= 'A' && ch <= 'Z')
+        {
+            ch = 'a' + ch - 'A';
+        }
+        return ch;
     }
     void wordCaptilize(string word)
     {
-        vector<string>ans;
-        int n=word.length();
-        string word="";
-        bool found=false;
-        for(int i=0;i<n;i++)
+        vector<string> ans;
+        int n = word.length();
+        string word = "";
+        bool found = false;
+        for (int i = 0; i < n; i++)
         {
-            
-            if(word[i]!=' ')
+            char ch = word[i];
+            if (ch != ' ')
             {
-                char ch=word[i];
-                if(ch>='a'&&ch<='z'&&!found)
+                if (!found)
                 {
-                    ch='A'+ch-'a';
-                    found=true;
+                    ch = makeBig(ch);
+                    word += ch;
+                    found = true;
                 }
-                else{
-                    ch='a'+ch-'A';
-                    word+=ch;
+                else
+                {
+                    ch = makeSmall(ch);
+                    word += ch;
                 }
-                continue;
             }
-
+            else
+            {
+                found = false;
+                if (word != "")
+                {
+                    ans.push_back(word);
+                    word = "";
+                }
+            }
         }
     }
 };
