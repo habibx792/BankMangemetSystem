@@ -16,6 +16,12 @@ public:
     {
         cout<<"============================Welcome Habib Bank Limited=====================\n";
     }
+    void printMainMenu()
+    {
+        cout<<"1 for Owner \n";
+        cout<<"2 for Admin \n";
+    }
+    
     
 
 };
