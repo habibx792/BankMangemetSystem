@@ -13,6 +13,7 @@ void clearScrean()
 using namespace std;
 void playLogin()
 {
+cout<<"Welcome To Bank \n";
     
 }
 int main()
