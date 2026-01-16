@@ -23,7 +23,7 @@ int main()
     // system start a login sound should play
     playLogin();
 
-    Customer c("haib", "wali", 22, 1);
+    // Customer c("haib", "wali", 22, 1);ññ
     cout << "hellp World \n";
     return 0;
 }

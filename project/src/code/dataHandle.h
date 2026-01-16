@@ -122,15 +122,15 @@ public:
         }
         return ch;
     }
-    void wordCaptilize(string word)
+    void wordCaptilize(string str)
     {
         vector<string> ans;
-        int n = word.length();
+        int n = str.length();
         string word = "";
         bool found = false;
         for (int i = 0; i < n; i++)
         {
-            char ch = word[i];
+            char ch = str[i];
             if (ch != ' ')
             {
                 if (!found)
