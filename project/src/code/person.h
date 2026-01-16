@@ -78,34 +78,40 @@ public:
     {
         this->personCity = city;
     }
-    string getPersonName()const
+    string getPersonName() const
     {
         return this->personName;
-
     }
-    string getPersonCnic()const
+    string getPersonCnic() const
     {
         return this->personCnic;
-
     }
-    int getPersonAge()const
+    int getPersonAge() const
     {
         return this->personAge;
     }
-    string getPersonFatherName()const
+    string getPersonFatherName() const
     {
         return this->personFatherName;
     }
-    string getPersonCountry()const
+    string getPersonCountry() const
     {
         return this->personCountry;
     }
-    string getPersonCity()const
+    string getPersonCity() const
     {
         return this->personCity;
     }
-    
-
+    virtual void print()
+    {
+        cout << "============Personal Detail=========== \n";
+        cout << "Name :-> " << this->personName;
+        cout << "Cnic :->" << this->personCnic;
+        cout << "Age  :->" << this->personAge;
+        cout << "FatherName : ->" << this->personFatherName;
+        cout << "Country :->" << this->personCountry;
+        cout << "City :->" << this->personCity;
+    }
 };
 
 #endif // Person_H
