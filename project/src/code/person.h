@@ -78,6 +78,34 @@ public:
     {
         this->personCity = city;
     }
+    string getPersonName()const
+    {
+        return this->personName;
+
+    }
+    string getPersonCnic()const
+    {
+        return this->personCnic;
+
+    }
+    int getPersonAge()const
+    {
+        return this->personAge;
+    }
+    string getPersonFatherName()const
+    {
+        return this->personFatherName;
+    }
+    string getPersonCountry()const
+    {
+        return this->personCountry;
+    }
+    string getPersonCity()const
+    {
+        return this->personCity;
+    }
+    
+
 };
 
 #endif // Person_H
