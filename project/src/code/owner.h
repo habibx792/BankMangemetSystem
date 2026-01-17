@@ -3,15 +3,29 @@
 
 #include <string>
 #include <iostream>
+#include "person.h"
 using namespace std;
 
-class Owner {
+class Owner:public Person {
 private:
 protected:
-    // member variables
+    
 public:
     // constructors
-    Owner();
+    Owner():Person()
+    {
+
+    }
+    Owner(string name, string cnic, int age, string fatherName, string country, string city)
+     :Person(name,cnic,age,fatherName,country,city)
+    {
+    }
+    void print()override
+    {
+        base::print();
+        
+        
+    }
 
 };
 

@@ -20,6 +20,7 @@ public:
     // constructors
     Person()
     {
+
         this->personAge = 0;
         this->personName = "";
         this->personCnic = "";
@@ -105,12 +106,12 @@ public:
     virtual void print()
     {
         cout << "============Personal Detail=========== \n";
-        cout << "Name :-> " << this->personName;
-        cout << "Cnic :->" << this->personCnic;
-        cout << "Age  :->" << this->personAge;
-        cout << "FatherName : ->" << this->personFatherName;
-        cout << "Country :->" << this->personCountry;
-        cout << "City :->" << this->personCity;
+        cout << "Name :-> " << this->personName<<endl;
+        cout << "Cnic :->" << this->personCnic<<endl;
+        cout << "Age  :->" << this->personAge<<endl;
+        cout << "FatherName : ->" << this->personFatherName<<endl;
+        cout << "Country :->" << this->personCountry<<endl;
+        cout << "City :->" << this->personCity<<endl;
     }
 };
 
