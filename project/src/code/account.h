@@ -41,7 +41,30 @@ public:
     {
         cout<<account<<endl;
     }
-    
-};
 
+};
+class SavingAccount : public Account
+{
+private:
+    static double interestRate;
+    SavingAccount() = default;
+    SavingAccount(const SavingAccount&) = delete;
+    SavingAccount& operator=(const SavingAccount&) = delete;
+public:
+    static SavingAccount& getInstance()
+    {
+        static SavingAccount account;
+        return account;
+    }
+
+    static void setRate(double rate)
+    {
+        interestRate = rate;
+    }
+
+    static double getRate()
+    {
+        return interestRate;
+    }
+};
 #endif // Account_H

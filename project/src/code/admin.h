@@ -3,9 +3,10 @@
 
 #include <string>
 #include <iostream>
+#include "person.h"
 using namespace std;
 
-class Admin {
+class Admin:public Person{
 private:
 protected:
     // member variables

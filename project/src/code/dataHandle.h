@@ -191,17 +191,32 @@ public:
         {
             middleNo+=cnic[index];
         }
+        cout<<"Dt->Middled :"<<middleNo<<endl;
         return middleNo;
     }
-    string convertStandardFormat(string cnin)
+    string convertStandardFormat(string cnic)
     {
         string ans="";
-        for(int i=0;i<=0;i++)
+        int n=cnic.length();
+        for(int i=0;i<n;i++)
         {
-
+            if(i==4)
+            {
+                ans+=cnic[i];
+                ans+='-';
+            }
+            else if(i==11)
+            {
+                ans+=cnic[i];
+                ans+='-';
+            }
+            else{
+                ans+=cnic[i];
+            }
         }
+        cout<<"Dt->format :"<<ans<<endl;
+        // ans+=cnic[i];
         return ans;
     }
 };
-
 #endif
