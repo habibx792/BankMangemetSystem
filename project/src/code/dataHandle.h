@@ -156,7 +156,6 @@ public:
             }
         }
     }
-
     std::string getCurrentDateTime()
     {
         // Get current time from system clock
@@ -174,6 +173,29 @@ public:
                       "%Y-%m-%d %H:%M:%S", local_time);
 
         return std::string(buffer);
+    }
+    bool validateCnic(string &cnic)const
+    {
+        return cnic.length()<0&&cnic.length()>13;
+    }
+    string getMiddleFive(string cnic)
+    {
+        int index = 5;
+        string middleNo = "";
+        if (validateCnic(cnic))
+        {
+            throughError();
+            return "NULL";
+        }
+        for(index;index<=10;index++)
+        {
+            middleNo+=cnic[index];
+        }
+        return middleNo;
+    }
+    string convertStandardFormat(string cnin)
+    {
+        for(int i=0;i<=)
     }
 };
 

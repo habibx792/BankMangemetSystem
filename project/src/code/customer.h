@@ -12,6 +12,7 @@ class Customer : public Person
 private:
 protected:
     string customerAccountNo;
+    string customerAccountType;
     double customerAccountBalance;
 
 public:
@@ -21,11 +22,20 @@ public:
     Customer(string name, string cnic, int age, string fatherName, string country, string city) : Person(name, cnic, age, fatherName, country, city)
     {
         this->customerAccountNo = "";
+        this->customerAccountType="basic";
         this->customerAccountBalance = 0;
     }
     void setCustomerAccountNo(string accountNo)
     {
         this->customerAccountNo = accountNo;
+    }
+    void setAccountType(string accountType)
+    {
+        this->customerAccountType=accountType
+    }
+    string getAccountType()const
+    {
+        return this->customerAccountType;
     }
     void setBalance(double accountBalance)
     {
@@ -44,6 +54,7 @@ public:
     {
         Person::print();
         cout << "Account No :->" << customerAccountNo << endl;
+        cout<<"AccountType :-> "<<customerAccountType<<endl;
         cout << "Current Balance :->  " << customerAccountBalance << endl;
     }
 };
