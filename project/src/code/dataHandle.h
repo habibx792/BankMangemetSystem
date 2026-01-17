@@ -195,7 +195,12 @@ public:
     }
     string convertStandardFormat(string cnin)
     {
-        for(int i=0;i<=)
+        string ans="";
+        for(int i=0;i<=0;i++)
+        {
+
+        }
+        return ans;
     }
 };
 

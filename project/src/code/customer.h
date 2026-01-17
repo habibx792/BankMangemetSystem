@@ -31,7 +31,7 @@ public:
     }
     void setAccountType(string accountType)
     {
-        this->customerAccountType=accountType
+        this->customerAccountType=accountType;
     }
     string getAccountType()const
     {
