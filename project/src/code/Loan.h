@@ -12,6 +12,7 @@ private:
 protected:
     string type;
     double amount;
+    double rate;
 
 public:
     // constructors

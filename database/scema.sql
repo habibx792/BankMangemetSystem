@@ -1,5 +1,7 @@
 create database Bank;
 use  Bank;
+drop table owner;
+drop table admin;
 create table owner
 (
 	
