@@ -21,15 +21,8 @@ private:
     {
         MEMORYSTATUSEX mem;
         mem.dwLength = sizeof(mem);
-
         GlobalMemoryStatusEx(&mem);
         vector<int> ramDetails;
-
-        std::cout << "RAM Used (%): " << mem.dwMemoryLoad << std::endl;
-        std::cout << "Total RAM (MB): "
-                  << mem.ullTotalPhys / (1024 * 1024) << std::endl;
-        std::cout << "Available RAM (MB): "
-                  << mem.ullAvailPhys / (1024 * 1024) << std::endl;
         ramDetails.push_back(mem.ullAvailPhys / (1024 * 1024));
         ramDetails.push_back(mem.ullTotalPhys / (1024 * 1024));
         ramDetails.push_back(mem.dwMemoryLoad);
@@ -75,13 +68,13 @@ private:
         GetCursorPos(&p);
         return p;
     }
-    void getRandomData( vector<int>&randomData)
+    void getRandomData(vector<int> &randomData)
     {
-       
-        POINT p=getMousePosition();
-        int x=p.x;
-        int y=p.y;
-        double cpuUse=getCPUUsage();
+
+        POINT p = getMousePosition();
+        int x = p.x;
+        int y = p.y;
+        double cpuUse = getCPUUsage();
         randomData = getRAMInfo();
         long long entropy = addressEntropy();
         randomData.push_back(x);
@@ -295,29 +288,71 @@ public:
 
     string getRandomNoStr()
     {
-        return "hel";
+        // cout<<"Enter \n";
+        string ans = "";
+        vector<int> randInfo;
+        getRandomData(randInfo);
+        for (int i = 0; i < randInfo.size(); i++)
+        {
+            // cout<<"Enter loop\n";
+
+            int dig = randInfo[i] % (i + 1);
+            if (i == 0 && dig == 0 || dig < 0)
+            {
+                continue;
+            }
+            string ch = to_string(dig);
+            ans += ch;
+        }
+        return ans;
     }
+
     long long getRandomNumber()
     {
-        return 0;
+        vector<int> randInfo;
+        int ans = 0;
+        getRandomData(randInfo);
+        for (int i = 0; i < randInfo.size(); i++)
+        {
+            int dig = randInfo[i] % (i + 1);
+            if (i == 0 && dig == 0 || dig < 0)
+            {
+                continue;
+            }
+            ans = ans * 10 + dig;
+        }
+        return ans;
+    }
+    int getOtp()
+    {
+        int rand = getRandomNumber();
+        int otp = 0;
+        for (int i = 1; i <= 4; i++)
+        {
+            int dig = rand % 10;
+            if (i == 1 && dig == 0)
+            {
+                continue;
+            }
+            otp = otp * 10 + dig;
+            rand /= 10;
+        }
+        return otp;
     }
 
-
-
-
-
-
-    //testing method()
+    // testing method()
     void printSystemInfo()
     {
-        vector<int>info;
+
+        vector<int> info;
         getRandomData(info);
-        int n=info.size();
-        for(int i=0;i<n;i++)
+        int n = info.size();
+        for (int i = 0; i < n; i++)
         {
-            cout<<info[i]<<" : ";
+            cout << "Enter loop\n";
+            cout << info[i] << " : ";
         }
-        cout<<endl;
+        cout << endl;
     }
 };
 #endif

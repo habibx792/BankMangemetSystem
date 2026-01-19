@@ -19,7 +19,12 @@ void playLogin()
 int main()
 {
     DataHandle &dt = DataHandle::GetInstance();
-    dt.printSystemInfo();
-    cout << "hellp World \n";
+    cout << dt.getRandomNoStr() << endl;
+    cout << dt.getRandomNumber() << endl;
+    cout << "Generating otp to prevent hacking.... \n";
+    cout << dt.getOtp() << endl;
+    // dt.printSystemInfo();
+    cout
+        << "hellp World \n";
     return 0;
 }
