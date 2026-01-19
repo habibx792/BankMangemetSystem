@@ -5,14 +5,14 @@
 #include <iostream>
 using namespace std;
 
-class Salary{
+class Salary
+{
 private:
 protected:
     // member variables
 public:
     // constructors
     Salary();
-
 };
 
 #endif // Salary_H

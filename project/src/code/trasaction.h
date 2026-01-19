@@ -1,18 +1,18 @@
-#ifndef Traction_H
-#define Traction_H
+#ifndef Trasaction_H
+#define Trasaction_H
 
 #include <string>
 #include <iostream>
 using namespace std;
 
-class Traction {
+class Trasaction
+{
 private:
 protected:
     // member variables
 public:
     // constructors
-    Traction();
-
+    Trasaction();
 };
 
 #endif // Traction_H

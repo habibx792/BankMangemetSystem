@@ -5,14 +5,12 @@
 #include <iostream>
 using namespace std;
 
-class NewNode {
+class NewNode
+{
 private:
 protected:
-
 public:
-   
     NewNode();
-
 };
 
 #endif // NewNode_H

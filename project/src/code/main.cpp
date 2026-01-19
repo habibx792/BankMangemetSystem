@@ -18,11 +18,8 @@ void playLogin()
 }
 int main()
 {
-
-    // clearScrean();
-    // system start a login sound should play
-    playLogin();
-    // Customer c("haib", "wali", 22, 1);
+    DataHandle &dt = DataHandle::GetInstance();
+    dt.printSystemInfo();
     cout << "hellp World \n";
     return 0;
 }

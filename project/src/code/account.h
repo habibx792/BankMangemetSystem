@@ -2,27 +2,27 @@
 #define Account_H
 #include <string>
 #include <iostream>
+
 #include <ctime>
 using namespace std;
 class Account
 {
 private:
-    string account;
+protected:
+    string accountNo;
+    string accountType;
+    string accountStatus;
+    double currentAccountBalance;
+    string customerId;
+
+public:
     Account()
     {
-        account = "";
-    }
-    Account(const Account &) = delete;
-    Account operator&=(const Account &) = delete;
-
-protected:
-    // member variables
-public:
-    static Account &
-    getInstance()
-    {
-        static Account at;
-        return at;
+        this->accountNo = "";
+        this->accountStatus = "block";
+        this->currentAccountBalance = 0;
+        this->customerId = "";
+        this->accountType = "current";
     }
     string createAccount(int branchCode, string cnicMiddle_5, int age)
     {
@@ -34,35 +34,48 @@ public:
         string strYear = to_string(year);
         string strMonth = to_string(month);
         string brCode = to_string(branchCode);
-         account = brCode + cnicMiddle_5 + strAge + strYear + strMonth;
-        return account;
+        accountNo = brCode + cnicMiddle_5 + strAge + strYear + strMonth;
+        return accountNo;
     }
-    void diplayCurrentAccount()const
+    void setBalance(double balance)
     {
-        cout<<account<<endl;
+        this->currentAccountBalance = balance;
     }
-
+    double getCurrentBalance()
+    {
+        return this->currentAccountBalance;
+    }
+    void changeAccountType(string type)
+    {
+        this->accountType = type;
+    }
+    string getAccountType() const
+    {
+        return this->accountType;
+    }
+    void diplayCurrentAccount() const
+    {
+        cout << accountNo << endl;
+    }
 };
 class SavingAccount : public Account
 {
 private:
     static double interestRate;
-    SavingAccount() = default;
-    SavingAccount(const SavingAccount&) = delete;
-    SavingAccount& operator=(const SavingAccount&) = delete;
-public:
-    static SavingAccount& getInstance()
-    {
-        static SavingAccount account;
-        return account;
-    }
 
+public:
+    SavingAccount() : Account()
+    {
+        this->accountType = "saving";
+    }
     static void setRate(double rate)
     {
         interestRate = rate;
     }
+    
 
-    static double getRate()
+    static double
+    getRate()
     {
         return interestRate;
     }

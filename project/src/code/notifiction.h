@@ -5,14 +5,14 @@
 #include <iostream>
 using namespace std;
 
-class Nofication {
+class Nofication
+{
 private:
 protected:
     // member variables
 public:
     // constructors
     Nofication();
-
 };
 
 #endif // Nofication_H
