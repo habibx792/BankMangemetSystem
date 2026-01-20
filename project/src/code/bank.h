@@ -13,9 +13,6 @@ public:
     // constructors
     Bank
 ();
-    
-
-    // getters
     string getmemberName() const;
     virtual void withDraw(int amount, string accountNo)
     {

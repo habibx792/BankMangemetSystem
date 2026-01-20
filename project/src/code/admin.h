@@ -21,7 +21,7 @@ public:
     Employee() : Person()
     {
     }
-    Employee(string name, string cnic, int age, string fatherName, string country, string city, double salay, double bonus, double yearInc, double yearBonus) : Person(name, cnic, age, fatherName, country, city)
+    Employee(string name, string cnic, int age, string fatherName, string country, string provisince = "", string city, int streetNo, int postCode, double salay, double bonus, double yearInc, double yearBonus) : Person(name, cnic, age, fatherName, country, provisince, city,postCode,streetNo)
     {
         this->employeeSalary = salay;
         this->monthlyBonus = bonus;

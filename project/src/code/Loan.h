@@ -11,18 +11,22 @@ private:
     // member variabl
 protected:
     string type;
-    double amount;
+    double loanAmount;
     double rate;
+    string loanIssueDate;
+    string loanReturnDate;
+    double totalMarkup;
 
 public:
     // constructors
     Loan();
-    virtual void setLoanAmount(double amount)
+    void setLoanAmount(double amount)
     {
+        this->loanAmount;
     }
-    virtual double getLoanAmount()
+     double getLoanAmount()
     {
-        return amount;
+        return loanAmount;
     }
 };
 class HomeLoan : public Loan

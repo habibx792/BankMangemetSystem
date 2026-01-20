@@ -18,7 +18,7 @@ public:
     Customer() : Person()
     {
     }
-    Customer(string name, string cnic, int age, string fatherName, string country, string city) : Person(name, cnic, age, fatherName, country, city)
+    Customer(string name, string cnic, int age, string fatherName, string country, string provisince = "", string city, int streetNo, int postCode) : Person(name, cnic, age, fatherName, country, provisince, city, postCode, streetNo)
     {
         this->customerAccountNo = "";
         this->customerAccountType = "basic";
