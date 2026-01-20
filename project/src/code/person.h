@@ -26,7 +26,7 @@ public:
         this->personCnic = "";
         this->personFatherName = "";
     }
-    Person(string name, string cnic, int age, string fatherName, string country, string provisince = "", string city, int streetNo, int postCode)
+    Person(string name, string cnic, int age, string fatherName, string country, string provisince , string city, int streetNo, int postCode)
     {
         this->personName = name;
         this->personCnic = cnic;

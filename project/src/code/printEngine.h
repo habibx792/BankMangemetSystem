@@ -14,16 +14,13 @@ public:
     PrintEngine();
     void WelcomeNote()
     {
-        cout<<"============================Welcome Habib Bank Limited=====================\n";
+        cout<<"============================ Welcome  To Bank =====================\n";
     }
     void printMainMenu()
     {
         cout<<"1 for Owner \n";
         cout<<"2 for Admin \n";
     }
-    
-    
-
 };
 
 #endif // PrintEngine_H
