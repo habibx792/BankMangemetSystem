@@ -1,19 +1,65 @@
-#ifndef Admin_H
-#define Admin_H
+#ifndef Employee_H
+#define Employee_H
 
 #include <string>
 #include <iostream>
 #include "person.h"
 using namespace std;
 
-class Admin:public Person{
+class Employee : public Person
+{
 private:
+    double employeeSalary;
+    double monthlyBonus;
+    double yearlyBonus;
+    double yearlyIncreament;
+
 protected:
     // member variables
 public:
     // constructors
-    Admin();
-
+    Employee() : Person()
+    {
+    }
+    Employee(string name, string cnic, int age, string fatherName, string country, string city, double salay, double bonus, double yearInc, double yearBonus) : Person(name, cnic, age, fatherName, country, city)
+    {
+        this->employeeSalary = salay;
+        this->monthlyBonus = bonus;
+        this->yearlyIncreament = yearInc;
+        this->yearlyBonus = yearBonus;
+    }
+    void setMonthBonus(double bonus)
+    {
+        this->monthlyBonus = bonus;
+    }
+    void setYearBonus(double yearBonus)
+    {
+        this->yearlyBonus = yearBonus;
+    }
+    void setSalary(double sal)
+    {
+        this->employeeSalary = sal;
+    }
+    void setYearIncrement(double yearInc)
+    {
+        this->yearlyIncreament = yearInc;
+    }
+    double getSalary() const
+    {
+        return employeeSalary;
+    }
+    double getMonthlyBonue() const
+    {
+        return this->monthlyBonus;
+    }
+    double getYearlyIncreament() const
+    {
+        return this->yearlyIncreament;
+    }
+    double getYearlyBonus() const
+    {
+        return this->yearlyBonus;
+    }
 };
 
 #endif // Admin_H

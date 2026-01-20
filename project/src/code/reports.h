@@ -11,7 +11,6 @@ private:
     // member variables
 protected:
     string reportType;
-
 public:
     // constructors
     Report()

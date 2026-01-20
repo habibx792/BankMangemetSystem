@@ -24,7 +24,7 @@ public:
         this->customerId = "";
         this->accountType = "current";
     }
-    string createAccount(int branchCode, string cnicMiddle_5, int age)
+    string createAccount(int branchCode,string randomStr, string cnicMiddle_5, int age)
     {
         time_t now = time(nullptr);
         tm *localTime = localtime(&now);
@@ -34,7 +34,7 @@ public:
         string strYear = to_string(year);
         string strMonth = to_string(month);
         string brCode = to_string(branchCode);
-        accountNo = brCode + cnicMiddle_5 + strAge + strYear + strMonth;
+        accountNo = brCode + cnicMiddle_5 + randomStr+ strAge + strYear + strMonth;
         return accountNo;
     }
     void setBalance(double balance)

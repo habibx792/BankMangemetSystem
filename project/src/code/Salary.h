@@ -9,9 +9,9 @@ class Salary
 {
 private:
 protected:
-    // member variables
+   
 public:
-    // constructors
+    
     Salary();
 };
 

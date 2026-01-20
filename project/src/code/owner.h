@@ -22,10 +22,9 @@ public:
     }
     void print()override
     {
-        base::print();
-        
-        
+        Person::print();
     }
+    
 
 };
 
