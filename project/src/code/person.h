@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include "dataHandle.h"
+#include "adress.h"
 using namespace std;
 DataHandle &dt = DataHandle::GetInstance();
 class Person
@@ -13,8 +14,7 @@ protected:
     string personFatherName;
     int personAge;
     string personCnic;
-    string personCountry;
-    string personCity;
+    Address ad;
 
 public:
     // constructors
@@ -25,10 +25,8 @@ public:
         this->personName = "";
         this->personCnic = "";
         this->personFatherName = "";
-        this->personCountry = "";
-        this->personCity = "";
     }
-    Person(string name, string cnic, int age, string fatherName, string country, string city)
+    Person(string name, string cnic, int age, string fatherName, string country, string provisince = "", string city, int streetNo, int postCode)
     {
         this->personName = name;
         this->personCnic = cnic;
@@ -44,8 +42,11 @@ public:
         }
         this->personAge = age;
         this->personFatherName = fatherName;
-        this->personCountry = country;
-        this->personCity = city;
+        this->ad.setCountry(country);
+        this->ad.setProvisince(provisince);
+        this->ad.setCity(city);
+        this->ad.setStreetNo(streetNo);
+        this->ad.setPostalCode(postCode);
     }
     void setPesonName(string name)
     {
@@ -73,11 +74,27 @@ public:
     }
     void setPersonCountry(string country)
     {
-        this->personCountry = country;
+        this->ad.setCountry(country);
     }
     void setPersonCity(string city)
     {
-        this->personCity = city;
+        this->ad.setCity(city);
+    }
+    void setProvisince(string provisince)
+    {
+        this->ad.setProvisince(provisince);
+    }
+    void setStreetNo(int streetNo)
+    {
+        this->ad.setStreetNo(streetNo);
+    }
+    void setPostalCode(int postalCode)
+    {
+        this->ad.setPostalCode(postalCode);
+    }
+    Address &getAdress()
+    {
+        return ad;
     }
     string getPersonName() const
     {
@@ -95,24 +112,14 @@ public:
     {
         return this->personFatherName;
     }
-    string getPersonCountry() const
-    {
-        return this->personCountry;
-    }
-    string getPersonCity() const
-    {
-        return this->personCity;
-    }
     virtual void print()
     {
         cout << "============Personal Detail=========== \n";
-        cout << "Name :-> " << this->personName<<endl;
-        cout << "Cnic :->" << this->personCnic<<endl;
-        cout << "Age  :->" << this->personAge<<endl;
-        cout << "FatherName : ->" << this->personFatherName<<endl;
-        cout << "Country :->" << this->personCountry<<endl;
-        cout << "City :->" << this->personCity<<endl;
+        cout << "Name :-> " << this->personName << endl;
+        cout << "Cnic :->" << this->personCnic << endl;
+        cout << "Age  :->" << this->personAge << endl;
+        cout << "FatherName : ->" << this->personFatherName << endl;
+        ad.print();
     }
 };
-
 #endif // Person_H

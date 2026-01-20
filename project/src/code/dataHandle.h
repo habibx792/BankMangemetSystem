@@ -236,7 +236,6 @@ public:
         char buffer[20];
         std::strftime(buffer, sizeof(buffer),
                       "%Y-%m-%d %H:%M:%S", local_time);
-
         return std::string(buffer);
     }
     bool validateCnic(string &cnic) const
@@ -285,7 +284,6 @@ public:
         return ans;
     }
     // create a method that give me a random Number type
-
     string getRandomNoStr()
     {
         // cout<<"Enter \n";
@@ -306,7 +304,6 @@ public:
         }
         return ans;
     }
-
     long long getRandomNumber()
     {
         vector<int> randInfo;
@@ -339,7 +336,10 @@ public:
         }
         return otp;
     }
-
+    bool zeroNegNumberHandler(double number)
+    {
+        return number!=0&&number>0;
+    }
     // testing method()
     void printSystemInfo()
     {
