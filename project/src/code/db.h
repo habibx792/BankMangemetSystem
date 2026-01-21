@@ -54,7 +54,7 @@ public:
             return false;
         }
 
-        // Connect to SM_System database using direct ODBC
+        // Connect to Bank database using direct ODBC
         SQLCHAR *connStr = (SQLCHAR *)"DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost\\SQLEXPRESS;DATABASE=Bank;Trusted_Connection=yes;TrustServerCertificate=yes;";
 
         SQLCHAR outConnStr[1024];
@@ -66,14 +66,14 @@ public:
 
         if (retcode != SQL_SUCCESS && retcode != SQL_SUCCESS_WITH_INFO)
         {
-            cout << "Error connecting to SM_System database" << endl;
+            cout << "Error connecting to Bank database" << endl;
             SQLFreeHandle(SQL_HANDLE_DBC, this->hdbc);
             SQLFreeHandle(SQL_HANDLE_ENV, this->henv);
             return false;
         }
 
         this->isConnected = true;
-        cout << "Connected to SM_System database successfully" << endl;
+        cout << "Connected to Bank database successfully" << endl;
         return true;
     }
     bool excuteQuery(string query)
