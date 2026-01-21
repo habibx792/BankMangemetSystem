@@ -15,6 +15,7 @@ protected:
     int personAge;
     string personCnic;
     Address ad;
+    string personType;
 
 public:
     // constructors
@@ -25,8 +26,9 @@ public:
         this->personName = "";
         this->personCnic = "";
         this->personFatherName = "";
+        personType = "person";
     }
-    Person(string name, string cnic, int age, string fatherName, string country, string provisince , string city, int streetNo, int postCode)
+    Person(string name, string cnic, int age, string fatherName, string country, string provisince, string city, int streetNo, int postCode)
     {
         this->personName = name;
         this->personCnic = cnic;
@@ -47,10 +49,19 @@ public:
         this->ad.setCity(city);
         this->ad.setStreetNo(streetNo);
         this->ad.setPostalCode(postCode);
+        this->personType = "person";
     }
     void setPesonName(string name)
     {
         this->personName = name;
+    }
+    void setPersonType(string type)
+    {
+        this->personType = type;
+    }
+    string getPersonType() const
+    {
+        return this->personType;
     }
     void setPersonCnic(string cnic)
     {

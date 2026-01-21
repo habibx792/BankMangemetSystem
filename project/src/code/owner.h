@@ -19,6 +19,7 @@ public:
     Owner(string name, string cnic, int age, string fatherName, string country, string city)
      :Person(name,cnic,age,fatherName,country,city)
     {
+        this->personType="owner";
     }
     void print()override
     {

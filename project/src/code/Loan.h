@@ -9,7 +9,7 @@ class Loan
 private:
     // member variabl
 protected:
-    string type;
+    string loanType;
     int durationYear;
     double loanAmount;
     static double markUpRate;
@@ -21,7 +21,7 @@ public:
     // constructors
     Loan()
     {
-        this->type = "general";
+        this->loanType = "general";
         this->loanAmount = 0;
         this->durationYear = 0;
         this->loanIssueDate = "";
@@ -34,18 +34,18 @@ public:
     }
     Loan(string type, string customerAccountNo, double amount, int duration, string issueDate, string returnDate)
     {
-        this->type = type;
+        this->loanType = type;
         this->customerAccountNo = customerAccountNo;
         this->loanAmount = amount;
         this->durationYear = duration;
     }
     void virtual setLoanType()
     {
-        this->type = "general";
+        this->loanType = "general";
     }
     string getLoanType()
     {
-        return type;
+        return loanType;
     }
     void calcuLateMarkup()
     {

@@ -13,6 +13,7 @@ private:
     double monthlyBonus;
     double yearlyBonus;
     double yearlyIncreament;
+    string employeeId;
 
 protected:
     // member variables
@@ -21,12 +22,21 @@ public:
     Employee() : Person()
     {
     }
-    Employee(string name, string cnic, int age, string fatherName, string country, string provisince = "", string city, int streetNo, int postCode, double salay, double bonus, double yearInc, double yearBonus) : Person(name, cnic, age, fatherName, country, provisince, city,postCode,streetNo)
+    Employee(string name, string cnic, int age, string fatherName, string country, string provisince, string city, int streetNo, int postCode, double salay, double bonus, double yearInc, double yearBonus) : Person(name, cnic, age, fatherName, country, provisince, city, postCode, streetNo)
     {
         this->employeeSalary = salay;
         this->monthlyBonus = bonus;
         this->yearlyIncreament = yearInc;
         this->yearlyBonus = yearBonus;
+        personType = "employee";
+    }
+    void setEployeeId(string id)
+    {
+        this->employeeId = id;
+    }
+    string getEmployeeId() const
+    {
+        return employeeId;
     }
     void setMonthBonus(double bonus)
     {
