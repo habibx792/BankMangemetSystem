@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "customer.h"
 #include "dataHandle.h"
+#include "system.h"
 void clearScrean()
 {
 #ifndef _WIN32
@@ -18,13 +19,8 @@ void playLogin()
 }
 int main()
 {
-    DataHandle &dt = DataHandle::GetInstance();
-    cout << dt.getRandomNoStr() << endl;
-    cout << dt.getRandomNumber() << endl;
-    cout << "Generating otp to prevent hacking.... \n";
-    cout << dt.getOtp() << endl;
-    // dt.printSystemInfo();
-    cout
-        << "hellp World \n";
+
+    SystemMange &systemy = SystemMange::getInstance();
+    systemy.run();
     return 0;
 }

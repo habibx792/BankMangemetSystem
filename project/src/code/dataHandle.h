@@ -88,6 +88,10 @@ public:
         static DataHandle instance;
         return instance;
     }
+    void welcomeNote(string welcome)
+    {
+        cout<<"Welcome To "<<welcome<<" Section \n";
+    }
     bool valiDateAge(int age)
     {
         return (age > 18 && age <= 130);
