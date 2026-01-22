@@ -13,7 +13,7 @@ class DataHandle
 {
 private:
     DataHandle()
-    {
+    {    
     }
     DataHandle(const DataHandle &) = delete;
     DataHandle &operator=(const DataHandle &) = delete;
